@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+header nav img {
+    width: 150px;
+}
+
+.teto {
+    width: 100vw;
+    position: relative;
+    left: -20px; 
+}
+
+.teto img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #0068C6;
+    margin-bottom: 15px;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #F1FBFF;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search-bar .lupa span{
+    color: #727272;
+    margin-right: 8px;
+    font-size: 30px;
+}
+
+.search-bar .pesquisar input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+/* Seção de indústrias */
+.section-industrias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 2px;
+    border: 1px solid #0068C6;
+    box-shadow: 0px 2px 0px #0068C6;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 0px #0068C6;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    background-color: #96D700;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #ADF30C;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cardd {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 2px;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 2px 0px #D9D9D9;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.cardd:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 0px #D9D9D9;
+}
+
+.cardd img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.bttn {
+    background-color: #D9D9D9;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+
+
+
