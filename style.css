@@ -10,7 +10,6 @@
 
 body {
     background-color: #FFFFFF;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +17,7 @@ body {
 
 /* Header */
 header {
+    margin-top: 2%;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -25,12 +25,6 @@ header {
 
 header nav img {
     width: 150px;
-}
-
-.teto {
-    width: 100vw;
-    position: relative;
-    left: -20px; 
 }
 
 .teto img {
@@ -48,6 +42,11 @@ h2 {
 }
 
 /* Barra de pesquisa */
+
+.search {
+    padding: 20px;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -72,6 +71,10 @@ h2 {
 }
 
 /* Seção de indústrias */
+main {
+    padding: 20px;
+}
+
 .section-industrias {
     display: grid;
     grid-template-columns: 1fr 1fr;

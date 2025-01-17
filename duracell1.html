@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montar Display Duracell</title>
+    <link rel="stylesheet" href="duracell/style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="duracell/assets/logo.png" alt="PDVplay Logo">
+            </div>
+            <div class="icons">
+                <div class="help">
+                    <span class="material-icons">help</span>
+                </div>
+                <div class="close">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+            <div id="helpModal">
+                Para montar o Display, selecione os botões correspondentes aos produtos.  
+                Para remover um item, clique na posição onde ele está no Display.  
+                Quando terminar de organizar, pressione "Pronto" para finalizar.
+            </div>
+        </nav>                              
+    </header>
+
+    <main>
+        <section id="container" class="section section-container">
+            <div class="progress-bar">
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+            <div class="title">
+                <img src="duracell/assets/duracell logo.png" alt="Duracell">
+                <p>Monte o Display que destaque os produtos da melhor forma</p>
+            </div>
+            
+            <div class="display-area" id="displayArea">
+                <div class= "products">
+                    <div class="product-slot" id="slot1"></div>
+                    <div class="product-slot" id="slot2"></div>
+                    <div class="product-slot" id="slot3"></div>
+                    <div class="product-slot" id="slot4"></div>
+                    <div class="product-slot" id="slot5"></div>
+                    <div class="product-slot" id="slot6"></div>
+                </div>
+            </div>
+    
+            <div class="product-list">
+                <img src="duracell/assets/aa2.png" alt="AA2" onclick="addToDisplay('aa2.png')">
+                <img src="duracell/assets/aa4.png" alt="AA4" onclick="addToDisplay('aa4.png')">
+                <img src="duracell/assets/aaa2.png" alt="AAA2" onclick="addToDisplay('aaa2.png')">
+                <img src="duracell/assets/aaa4.png" alt="AAA4" onclick="addToDisplay('aaa4.png')">
+                <img src="duracell/assets/2032.png" alt="2032" onclick="addToDisplay('2032.png')">
+            </div>
+            
+            <button id="btnPronto" onclick="finalizarMontagem()">Pronto</button>
+        </section>
+
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você concluiu o desafio com sucesso!</h2>
+                <p>Seu Display está perfeito e pronto para atrair clientes!</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <h2>Tente novamente</h2>
+                <h2>:(</h2>
+                <p>Algum produto está faltando no Display. Verifique e corrija para prosseguir!</p>
+                <button onclick="restartDisplay()">Recomeçar</button>
+            </div>
+        </div>
+
+        <div id="exitModal" class="modal">
+            <div class="modal-content">
+                <h2>Deseja realmente sair do jogo?</h2>
+                <p>Atenção: todo o seu progresso será perdido se você sair agora.</p>
+                <button id="continueBtn">Continuar jogando</button>
+                <button id="exitBtn">Sair</button>
+            </div>
+        </div>
+
+        <div id="fullSlotsModal">
+            <p>Todos os espaços estão preenchidos!</p>
+        </div>
+    </main>
+</body>
+
+</html>

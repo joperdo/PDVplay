@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: #FFFFFF;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: #F1FBFF;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.logo img {
+    width: 110px;
+}
+
+.icons {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    gap: 10px;
+}
+
+.icons .help span{
+    font-size: 30px;
+    color: #96D700;
+}
+
+.icons .close span{
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1FBFF;
+    background-color: #00A2E0;
+    border-radius: 4px;
+}
+
+/* Montar Display */
+.section-container {
+    background-color: #FFFFFF;
+    padding: 8px 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 6px;
+}
+
+.step {
+    width: 100%;
+    height: 100%;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.step.active {
+    background-color: #96D700; 
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #96D700;
+    transition: width 0.5s ease;
+}
+
+.title img {
+    width: 150px;
+}
+
+.title p{
+    font-size: 18px;
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #BC835E;
+    padding: 0px 15px;
+}
+
+.display-area {
+    width: 100%;
+    height: 250px;
+    background-image: url('assets/displaybalcaovazio.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative; /* Necessário para posicionar os slots */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    padding: 67px 0px;
+}
+
+.product-slot {
+    width: 70px;
+    height: 80px;
+    display: inline-block;
+    background-color: transparent;
+    overflow: hidden;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-list img {
+    width: 60px;
+    height: 70px;
+    padding: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background-color: #656D74;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px #000000;
+}
+
+.product-list img:hover {
+    transform: scale(1.1);
+    background-color: #96D700;
+}
+
+#btnPronto {
+    font-size: 20px;
+    margin-top: 40px;
+    padding: 10px 60px;
+    background-color: #96D700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#btnPronto:hover {
+    background-color: #ADF30C;
+}
+
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparência */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Caixa branca */
+.modal-content {
+    background-color: #fff;
+    padding: 50px 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #0068C6;
+    box-shadow: 0px 5px 0px #0068C6;
+    max-width: 400px;
+    width: 80%;
+}
+
+.modal-content h2{
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #0068C6;
+}
+
+.modal-content p{
+    font-size: 17px;
+    color: #000;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+
+/* Botão */
+.modal-content button {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px 10px;
+    width: 225px;
+    background-color: #96D700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #ADF30C;
+}
+
+/* Modal de Ajuda - Inicialmente oculto */
+#helpModal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9D9D9;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Quando ativo, o modal aparece */
+#helpModal.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Modal de Ajuda - Inicialmente oculto */
+#fullSlotsModal {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9D9D9;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+/* Quando ativo, o modal aparece */
+#fullSlotsModal {
+    opacity: 1;
+}
