@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body id="tela2">
+<body id="tela4">
     <header>
         <nav>
             <div class="logo">
@@ -24,36 +24,33 @@
                 </div>
             </div>
             <div id="helpModal">
-                Para responder à pergunta, clique no botão correspondente à sua resposta e, em seguida, pressione "Pronto" para confirmar sua escolha.
+                Selecione o botão correspondente à imagem que deseja escolher. Sua escolha será confirmada somente após pressionar o botão “Pronto”.
             </div>
         </nav>                              
     </header>
 
     <main>
+
         <section id="container" class="section section-container">
             <div class="progress-bar">
                 <div class="step active"></div>
                 <div class="step active"></div>
                 <div class="step active"></div>
-                <div class="step"></div>
-                <div class="step"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
                 <div class="step"></div>
                 <div class="step"></div>
             </div>
             <div class="title">
                 <img src="duracell/assets/duracell logo.png" alt="Duracell">
-                <p>Agora que o display está montado, qual o próximo passo?</p>
+                <p>Qual foto foi tirada na posição correta?</p>
             </div>
 
-            <div class="display-area" id="displayArea">
-                <img src="duracell/assets/displaybalcaocheio.png" alt="Display Duracell" class="display-bg">
-            </div>
-
-            <div class="options">
-                <button onclick="checkAnswer('colocartag')">Colocar Tag</button>
-                <button onclick="checkAnswer('mostrarsenha')">Mostrar senha</button>
-                <button onclick="checkAnswer('precificar')">Precificar</button>
-                <button onclick="checkAnswer('tirarfoto')">Tirar foto</button>
+            <div class="images">
+                <img src="duracell/assets/foto1.png" alt="Opção 1" class="option-image" data-answer="wrong">
+                <img src="duracell/assets/foto2.png" alt="Opção 2" class="option-image" data-answer="wrong">
+                <img src="duracell/assets/foto3.png" alt="Opção 3" class="option-image correct" data-answer="correct">
+                <img src="duracell/assets/foto4.png" alt="Opção 4" class="option-image" data-answer="wrong">
             </div>
 
             <button id="btnPronto" onclick="finalizarMontagem()">Pronto</button>
@@ -61,17 +58,16 @@
 
         <div id="successModal" class="modal">
             <div class="modal-content">
-                <h2>Parabéns! Você acertou!</h2>
-                <p>Seu display será precificado respectivamente!</p>
-                <button onclick="nextPage()">Próximo</button>
+                <h2>Boa escolha! Essa é a foto perfeita.</h2>
+                <p>Essa foto destaca todos os Checkouts corretamente.</p>
+                <button onclick="closeModal()">Próximo</button>
             </div>
         </div>
 
         <div id="errorModal" class="modal">
             <div class="modal-content">
-                <h2>Tente novamente</h2>
-                <h2>:(</h2>
-                <p>Preste mais atenção na sequência das ações!</p>
+                <h2>Ops! Essa não é a foto correta.</h2>
+                <p>Tente novamente e preste atenção nos detalhes!</p>
                 <button onclick="restartDisplay()">Recomeçar</button>
             </div>
         </div>
@@ -88,6 +84,8 @@
         <div id="fullSlotsModal">
             <p>Selecione uma opção antes de clicar em "Pronto".</p>
         </div>
+
     </main>
 </body>
+
 </html>

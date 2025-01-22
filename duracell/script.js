@@ -265,6 +265,102 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(modalId).style.display = 'flex';
         }
 
+        // Próxima página
+        window.nextPage = function () {
+            window.location.href = "duracell3.html";
+        };
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        document.querySelectorAll('.modal .close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', closeAllModals);
+        });
+
+        function restartDisplay() {
+            closeAllModals();
+            optionButtons.forEach(btn => btn.classList.remove('selected'));
+        }
+
+        document.querySelector('#errorModal button').addEventListener('click', restartDisplay);
+    }
+});
+
+//Interações da tela 3
+document.addEventListener('DOMContentLoaded', function() {
+    var tela3 = document.getElementById('tela3');
+
+    if (tela3) {
+        var optionButtons = document.querySelectorAll('.options button');
+
+        optionButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                optionButtons.forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        document.getElementById('btnPronto').addEventListener('click', function() {
+            finalizarMontagem();
+        });
+
+        function finalizarMontagem() {
+            var selectedButton = document.querySelector('.options button.selected');
+        
+            closeAllModals(); // Fecha qualquer modal aberto antes de abrir um novo
+        
+            if (!selectedButton) {
+                showFullSlotsModal();
+                return;
+            }
+        
+            // Verifica se a resposta correta foi selecionada
+            if (selectedButton.getAttribute('onclick').includes("mostrarsenha")) {
+                abrirModal('successModal');
+            } else {
+                abrirModal('errorModal');
+            }
+        }
+
+        // Pede para selecionar uma opção
+        function showFullSlotsModal() {
+            const modal = document.getElementById('fullSlotsModal');
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+    
+            setTimeout(() => {
+                fadeOut(modal);
+            }, 5000);
+    
+            document.addEventListener('click', () => fadeOut(modal), { once: true });
+        }
+    
+        // Função para fade-out (esmaecimento)
+        function fadeOut(element) {
+            let opacity = 1;
+            const fadeEffect = setInterval(() => {
+                if (opacity <= 0) {
+                    clearInterval(fadeEffect);
+                    element.style.display = 'none';
+                } else {
+                    opacity -= 0.05;
+                    element.style.opacity = opacity;
+                }
+            }, 70);
+        }
+
+        function abrirModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // Próxima página
+        window.nextPage = function () {
+            window.location.href = "duracell4.html";
+        };        
+        
         window.closeModal = function () {
             document.getElementById('successModal').style.display = 'none';
         };
@@ -285,5 +381,101 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         document.querySelector('#errorModal button').addEventListener('click', restartDisplay);
+    }
+});
+
+// Interações da tela 4
+document.addEventListener('DOMContentLoaded', function() {
+    var tela4 = document.getElementById('tela4');
+
+    if (tela4) {
+        var optionImages = document.querySelectorAll('.option-image');
+        var btnPronto = document.getElementById('btnPronto');
+
+        optionImages.forEach(function(image) {
+            image.addEventListener('click', function() {
+                optionImages.forEach(img => img.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        btnPronto.addEventListener('click', function() {
+            finalizarSelecao();
+        });
+
+        function finalizarSelecao() {
+            var selectedImage = document.querySelector('.option-image.selected');
+
+            closeAllModals(); // Fecha qualquer modal aberto antes de abrir um novo
+
+            if (!selectedImage) {
+                showFullSlotsModal();
+                return;
+            }
+
+            // Verifica se a imagem correta foi selecionada (a do canto inferior esquerdo)
+            if (selectedImage.classList.contains('correct')) {
+                abrirModal('successModal');
+            } else {
+                abrirModal('errorModal');
+            }
+        }
+
+        // Exibe modal pedindo para selecionar uma opção
+        function showFullSlotsModal() {
+            const modal = document.getElementById('fullSlotsModal');
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+
+            setTimeout(() => {
+                fadeOut(modal);
+            }, 5000);
+
+            document.addEventListener('click', () => fadeOut(modal), { once: true });
+        }
+
+        // Função para efeito de fade-out (esmaecimento)
+        function fadeOut(element) {
+            let opacity = 1;
+            const fadeEffect = setInterval(() => {
+                if (opacity <= 0) {
+                    clearInterval(fadeEffect);
+                    element.style.display = 'none';
+                } else {
+                    opacity -= 0.05;
+                    element.style.opacity = opacity;
+                }
+            }, 70);
+        }
+
+        function abrirModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // Próxima página
+        window.nextPage = function () {
+            window.location.href = "duracell3.html";
+        };           
+
+        window.closeModal = function () {
+            document.getElementById('successModal').style.display = 'none';
+        };
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        document.querySelectorAll('.modal .close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', closeAllModals);
+        });
+
+        function restartSelection() {
+            closeAllModals();
+            optionImages.forEach(img => img.classList.remove('selected'));
+        }
+
+        document.querySelector('#errorModal button').addEventListener('click', restartSelection);
     }
 });

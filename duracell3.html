@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body id="tela2">
+<body id="tela3">
     <header>
         <nav>
             <div class="logo">
@@ -35,24 +35,24 @@
                 <div class="step active"></div>
                 <div class="step active"></div>
                 <div class="step active"></div>
-                <div class="step"></div>
+                <div class="step active"></div>
                 <div class="step"></div>
                 <div class="step"></div>
                 <div class="step"></div>
             </div>
             <div class="title">
                 <img src="duracell/assets/duracell logo.png" alt="Duracell">
-                <p>Agora que o display está montado, qual o próximo passo?</p>
+                <p>Após precificar, o que deve ser feito para aprovar sua foto?</p>
             </div>
 
             <div class="display-area" id="displayArea">
-                <img src="duracell/assets/displaybalcaocheio.png" alt="Display Duracell" class="display-bg">
+                <img src="duracell/assets/displaybalcaoprecificado.png" alt="Display Duracell" class="display-bg">
             </div>
 
             <div class="options">
                 <button onclick="checkAnswer('colocartag')">Colocar Tag</button>
                 <button onclick="checkAnswer('mostrarsenha')">Mostrar senha</button>
-                <button onclick="checkAnswer('precificar')">Precificar</button>
+                <button onclick="checkAnswer('pesarprodutos')">Pesar produtos</button>
                 <button onclick="checkAnswer('tirarfoto')">Tirar foto</button>
             </div>
 
@@ -62,7 +62,7 @@
         <div id="successModal" class="modal">
             <div class="modal-content">
                 <h2>Parabéns! Você acertou!</h2>
-                <p>Seu display será precificado respectivamente!</p>
+                <p>Mostrar a senha na foto é essencial para que ela seja aprovada!</p>
                 <button onclick="nextPage()">Próximo</button>
             </div>
         </div>
