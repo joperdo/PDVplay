@@ -103,12 +103,12 @@ nav {
 }
 
 .title p{
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Dela Gothic One', serif;
     font-weight: 400;
     font-style: normal;
     color: #BC835E;
-    padding: 0px 15px;
+    padding: 0px 12px;
 }
 
 .display-area {
@@ -124,6 +124,11 @@ nav {
     align-items: flex-start;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.display-area img{
+    width: auto;
+    height: 250px;
 }
 
 .products {
@@ -252,6 +257,14 @@ nav {
     background-color: #ADF30C;
 }
 
+#exitBtn {
+    background-color: #D9D9D9;
+}
+
+#exitBtn:hover{
+    background-color: #BFBFBF;
+}
+
 /* Modal de Ajuda - Inicialmente oculto */
 #helpModal {
     display: none; /* Oculto por padrão */
@@ -304,4 +317,34 @@ nav {
 /* Quando ativo, o modal aparece */
 #fullSlotsModal {
     opacity: 1;
+}
+
+/* Botões de opções */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.options button {
+    width: 140px;
+    padding: 10px;
+    background-color: #F1FBFF;
+    border: none;
+    border-radius: 10px;
+    color: #00A2E0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.options button:hover {
+    border: 1px solid #96D700;
+}
+
+.options button.selected {
+    border: 1px solid #96D700;
 }
