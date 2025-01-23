@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body id="tela2">
+<body id="tela5">
     <header>
         <nav>
             <div class="logo">
@@ -35,25 +35,25 @@
                 <div class="step active"></div>
                 <div class="step active"></div>
                 <div class="step active"></div>
-                <div class="step"></div>
-                <div class="step"></div>
-                <div class="step"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
                 <div class="step"></div>
             </div>
             <div class="title">
                 <img src="duracell/assets/duracell logo.png" alt="Duracell">
-                <p>Agora que o display está montado, qual o próximo passo?</p>
+                <p>Identifique a tag correta para este PDV.</p>
             </div>
 
             <div class="image-area" id="imageArea">
-                <img src="duracell/assets/displaybalcaocheio.png" alt="Display Duracell" class="display-bg">
+                <img src="duracell/assets/fotopanoramica.png" alt="Foto Panorâmica" class="display-bg">
             </div>
 
             <div class="options">
-                <button onclick="checkAnswer('colocartag')">Colocar Tag</button>
-                <button onclick="checkAnswer('mostrarsenha')">Mostrar senha</button>
-                <button onclick="checkAnswer('precificar')">Precificar</button>
-                <button onclick="checkAnswer('tirarfoto')">Tirar foto</button>
+                <button onclick="checkAnswer('pontoextra')">Ponto Extra</button>
+                <button onclick="checkAnswer('pontonatural')">Ponto Natural</button>
+                <button onclick="checkAnswer('correlato')">Correlato</button>
+                <button onclick="checkAnswer('display')">Display</button>
             </div>
 
             <button id="btnPronto" onclick="finalizarMontagem()">Pronto</button>
@@ -62,8 +62,8 @@
         <div id="successModal" class="modal">
             <div class="modal-content">
                 <h2>Parabéns! Você acertou!</h2>
-                <p>Seu display será precificado respectivamente!</p>
-                <button onclick="nextPage()">Próximo</button>
+                <p>Você escolheu a tag correta para este PDV.</p>
+                <button onclick="closeModal()">Próximo</button>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
             <div class="modal-content">
                 <h2>Tente novamente</h2>
                 <h2>:(</h2>
-                <p>Preste mais atenção na sequência das ações!</p>
+                <p>Tente novamente e preste atenção na tag escolhida para este PDV!</p>
                 <button onclick="restartDisplay()">Recomeçar</button>
             </div>
         </div>
