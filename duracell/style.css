@@ -68,6 +68,8 @@ nav {
     width: 100%;
     height: 100%;
     position: relative;
+    justify-content: center;
+    justify-items: center;
 }
 
 .progress-bar {
@@ -108,6 +110,23 @@ nav {
     font-weight: 400;
     font-style: normal;
     color: #BC835E;
+    padding: 0px 12px;
+}
+
+.title h1{
+    font-size: 30px;
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #0068C6;
+    padding: 0px 20px;
+}
+
+.title h3{
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    color: #714123;
     padding: 0px 12px;
 }
 
@@ -210,6 +229,24 @@ nav {
 }
 
 #btnPronto:hover {
+    background-color: #ADF30C;
+}
+
+#btnProx {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 60px;
+    background-color: #96D700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#btnProx:hover {
     background-color: #ADF30C;
 }
 
@@ -387,4 +424,72 @@ nav {
 
 .images img.selected {
     border: 4px solid #96D700;
+}
+
+/* Estilo do container principal da imagem */
+.background-image {
+    background-color: #56D0FF;
+    width: 320px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: relative; /* Necessário para posicionamento dos erros */
+}
+
+.background-image {
+    position: relative;
+    height: 210px;
+}
+
+/* Estilo das áreas clicáveis (erros) */
+.erro {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 0, 0, 0); /* Inicialmente transparente */
+    border: 2px solid transparent; /* Sem borda visível */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animação suave para mudanças */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo das marcas de erro (X) adicionadas dinamicamente */
+.error-mark {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('duracell/assets/X.png') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Garante que a marca não interfira em cliques futuros */
+}
+
+/* Posicionamento de cada área clicável */
+.erro1 {
+    top: 90px;
+    left: 140px;
+}
+
+.erro2 {
+    top: 95px;
+    left: 182px;
+}
+
+.erro3 {
+    top: 163px;
+    left: 215px;
+}
+
+.erro4 {
+    top: 65px;
+    left: 80px;
+}
+
+.erro5 {
+    top: 163px;
+    left: 175px;
 }

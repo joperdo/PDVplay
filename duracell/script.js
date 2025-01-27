@@ -1,3 +1,80 @@
+// Selecionando os elementos
+const exitModal = document.getElementById('exitModal');
+const closeBtn = document.querySelector('.close');
+const continueBtn = document.getElementById('continueBtn');
+const exitBtn = document.getElementById('exitBtn');
+
+// Exibir o modal ao clicar no botão de fechar
+closeBtn.addEventListener('click', () => {
+    exitModal.style.display = 'flex';
+});
+
+// Fechar o modal e continuar no jogo
+continueBtn.addEventListener('click', () => {
+    exitModal.style.display = 'none';
+});
+
+// Redirecionar para a index.html ao clicar em "Sair"
+exitBtn.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
+// Fechar o modal se clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === exitModal) {
+        exitModal.style.display = 'none';
+    }
+});
+
+// Seleciona o ícone e o modal
+document.addEventListener('DOMContentLoaded', function () {
+    const helpIcon = document.querySelector('.help');
+    const helpModal = document.getElementById('helpModal');
+    let timeoutId; // Controla o tempo do modal
+
+    // Função para fechar o modal com efeito de esmaecimento
+    function closeModal() {
+        helpModal.style.opacity = '0'; // Inicia o esmaecimento
+
+        // Espera o efeito terminar antes de esconder o modal
+        setTimeout(() => {
+            helpModal.classList.remove('active');
+        }, 500); // Tempo igual ao do transition (0.5s)
+    }
+
+    // Função para abrir o modal
+    function openModal() {
+        helpModal.classList.add('active');
+        helpModal.style.opacity = '1'; // Garante que apareça totalmente
+
+        // Fecha automaticamente após 10 segundos
+        timeoutId = setTimeout(closeModal, 5000);
+    }
+
+    // Clique no ícone de ajuda: abre ou fecha
+    helpIcon.addEventListener('click', function (event) {
+        event.stopPropagation(); // Impede o clique de fechar o modal imediatamente
+
+        if (helpModal.classList.contains('active')) {
+            // Se o modal já estiver aberto, fecha
+            closeModal();
+            clearTimeout(timeoutId); // Cancela o timer se fechar manualmente
+        } else {
+            // Se estiver fechado, abre
+            openModal();
+        }
+    });
+
+    // Clique fora do modal para fechar
+    document.addEventListener('click', function (event) {
+        if (helpModal.classList.contains('active') && !helpModal.contains(event.target) && !helpIcon.contains(event.target)) {
+            closeModal();
+            clearTimeout(timeoutId); // Cancela o timer se fechar manualmente
+        }
+    });
+});
+
+//Interações tela 1
 document.addEventListener("DOMContentLoaded", function () {
     const bodyElement = document.querySelector('body');
     
@@ -119,83 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
     }
-});
-
-
-// Selecionando os elementos
-const exitModal = document.getElementById('exitModal');
-const closeBtn = document.querySelector('.close');
-const continueBtn = document.getElementById('continueBtn');
-const exitBtn = document.getElementById('exitBtn');
-
-// Exibir o modal ao clicar no botão de fechar
-closeBtn.addEventListener('click', () => {
-    exitModal.style.display = 'flex';
-});
-
-// Fechar o modal e continuar no jogo
-continueBtn.addEventListener('click', () => {
-    exitModal.style.display = 'none';
-});
-
-// Redirecionar para a index.html ao clicar em "Sair"
-exitBtn.addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
-
-// Fechar o modal se clicar fora dele
-window.addEventListener('click', (event) => {
-    if (event.target === exitModal) {
-        exitModal.style.display = 'none';
-    }
-});
-
-// Seleciona o ícone e o modal
-document.addEventListener('DOMContentLoaded', function () {
-    const helpIcon = document.querySelector('.help');
-    const helpModal = document.getElementById('helpModal');
-    let timeoutId; // Controla o tempo do modal
-
-    // Função para fechar o modal com efeito de esmaecimento
-    function closeModal() {
-        helpModal.style.opacity = '0'; // Inicia o esmaecimento
-
-        // Espera o efeito terminar antes de esconder o modal
-        setTimeout(() => {
-            helpModal.classList.remove('active');
-        }, 500); // Tempo igual ao do transition (0.5s)
-    }
-
-    // Função para abrir o modal
-    function openModal() {
-        helpModal.classList.add('active');
-        helpModal.style.opacity = '1'; // Garante que apareça totalmente
-
-        // Fecha automaticamente após 10 segundos
-        timeoutId = setTimeout(closeModal, 5000);
-    }
-
-    // Clique no ícone de ajuda: abre ou fecha
-    helpIcon.addEventListener('click', function (event) {
-        event.stopPropagation(); // Impede o clique de fechar o modal imediatamente
-
-        if (helpModal.classList.contains('active')) {
-            // Se o modal já estiver aberto, fecha
-            closeModal();
-            clearTimeout(timeoutId); // Cancela o timer se fechar manualmente
-        } else {
-            // Se estiver fechado, abre
-            openModal();
-        }
-    });
-
-    // Clique fora do modal para fechar
-    document.addEventListener('click', function (event) {
-        if (helpModal.classList.contains('active') && !helpModal.contains(event.target) && !helpIcon.contains(event.target)) {
-            closeModal();
-            clearTimeout(timeoutId); // Cancela o timer se fechar manualmente
-        }
-    });
 });
 
 
@@ -483,9 +483,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Interações da tela 5
 document.addEventListener('DOMContentLoaded', function() {
-    var tela3 = document.getElementById('tela5');
+    var tela5 = document.getElementById('tela5');
 
-    if (tela3) {
+    if (tela5) {
         var optionButtons = document.querySelectorAll('.options button');
 
         optionButtons.forEach(function(button) {
@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Próxima página
         window.nextPage = function () {
-            window.location.href = "duracell4.html";
+            window.location.href = "duracell6.html";
         };        
         
         window.closeModal = function () {
@@ -575,3 +575,73 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#errorModal button').addEventListener('click', restartDisplay);
     }
 });
+
+
+//Interações da tela 6
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.id !== "tela6") return;
+
+    const errors = document.querySelectorAll(".erro"); // Seleciona todos os erros
+    const modals = document.querySelectorAll(".modal"); // Seleciona todos os modais
+    const imageContainer = document.querySelector(".background-image:last-child"); // Container da segunda imagem
+    let foundCount = 0; // Contador de erros encontrados
+
+    errors.forEach((error, index) => {
+        error.addEventListener("click", (e) => {
+            // Evita múltiplos cliques no mesmo erro
+            if (error.classList.contains("encontrado")) return;
+
+            // Marca o erro como encontrado e desativa cliques
+            error.classList.add("encontrado");
+            error.style.pointerEvents = "none";
+
+            // Exibe a marca "X" no local clicado
+            const xPosition = e.clientX - imageContainer.getBoundingClientRect().left;
+            const yPosition = e.clientY - imageContainer.getBoundingClientRect().top;
+            showErrorMark(xPosition, yPosition);
+
+            // Mostra o modal correspondente
+            const modalId = `foundModal${index + 1}`;
+            showModal(modalId);
+
+            // Incrementa o contador de erros encontrados
+            foundCount++;
+        });
+    });
+
+    // Função para exibir o "X" na posição clicada
+    function showErrorMark(x, y) {
+        const mark = document.createElement("img");
+        mark.src = "duracell/assets/X.png";
+        mark.classList.add("error-mark");
+        mark.style.left = `${x}px`;
+        mark.style.top = `${y}px`;
+        imageContainer.appendChild(mark);
+    }
+
+    // Função para exibir um modal
+    function showModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "flex";
+        }
+    }
+
+    // Função para fechar o modal
+    window.closeModal = function () {
+        const openModal = document.querySelector(".modal[style*='display: flex']");
+        if (openModal) {
+            openModal.style.display = "none";
+
+            // Verifica se todos os erros foram encontrados
+            if (foundCount === errors.length) {
+                window.location.href = "duracell7.html"; // Redireciona para a tela inicial
+            }
+        }
+    };
+});
+
+//Interações da tela 7
+function proxPage() {
+    window.location.href = "index.html";
+}

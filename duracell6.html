@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duracell</title>
+    <link rel="stylesheet" href="duracell/style.css">
+    <script src="duracell/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body id="tela6">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="duracell/assets/logo.png" alt="PDVplay Logo">
+            </div>
+            <div class="icons">
+                <div class="help">
+                    <span class="material-icons">help</span>
+                </div>
+                <div class="close">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+            <div id="helpModal">
+                Compare as imagens usando a primeira como referência e selecione os itens diferentes na segunda para corrigi-los.
+            </div>
+        </nav>                              
+    </header>
+
+    <main>
+        <section id="container" class="section section-container">
+            <div class="progress-bar">
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step active"></div>
+                <div class="step"></div>
+            </div>
+            <div class="title">
+                <img src="duracell/assets/duracell logo.png" alt="Duracell">
+                <p>Ache os 5 erros e teste sua atenção aos detalhes!</p>
+            </div>
+            
+            <div class="background-image">
+                <img src="duracell/assets/5erros1.png" alt="Imagem Certa">
+            </div>
+            <div class="background-image">
+                <img src="duracell/assets/5erros2.png" alt="Iagem Errada">
+                <div class="erro erro1" onclick="showModal('foundModal1')"></div>
+                <div class="erro erro2" onclick="showModal('foundModal2')"></div>
+                <div class="erro erro3" onclick="showModal('foundModal3')"></div>
+                <div class="erro erro4" onclick="showModal('foundModal4')"></div>
+                <div class="erro erro5" onclick="showModal('foundModal5')"></div>
+            </div>
+             
+        </section>
+
+        <div id="foundModal1" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você acertou!</h2>
+                <p>Na imagem de referência temos um Clip-Cross, enquanto na segunda imagem aparece um Tic-Tac.</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="foundModal2" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você acertou!</h2>
+                <p>Na imagem de referência temos um Display Carona, enquanto na segunda imagem aparece um Display Balcão</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="foundModal3" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você acertou!</h2>
+                <p>Na imagem de referência temos um Display Pilhão, mas na segunda imagem aparece um Clip-Cross que não deveria estar no chão.</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="foundModal4" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você acertou!</h2>
+                <p>Na segunda imagem, o Display de Balcão Reto está sem produtos e preços, algo inaceitável. A montagem correta está na primeira imagem.</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="foundModal5" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns! Você acertou!</h2>
+                <p>Na primeira imagem, não há um Display de Balcão Reto nesse local, indicando que a posição dele na segunda imagem está incorreta.</p>
+                <button onclick="closeModal()">Próximo</button>
+            </div>
+        </div>
+
+        <div id="exitModal" class="modal">
+            <div class="modal-content">
+                <h2>Deseja realmente sair do jogo?</h2>
+                <p>Atenção: todo o seu progresso será perdido se você sair agora.</p>
+                <button id="continueBtn">Continuar jogando</button>
+                <button id="exitBtn">Sair</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
