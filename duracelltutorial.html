@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duracell</title>
+    <link rel="stylesheet" href="duracell/style.css">
+    <script src="duracell/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<!-- javascript precisa ser especifico para body id="tutorial" -->
+<body id="tutorial">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="duracell/assets/logo.png" alt="PDVplay Logo">
+            </div>
+            <div class="icons">
+                <div class="help">
+                    <span class="material-icons">help</span>
+                </div>
+                <div class="close">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+        </nav>                             
+    </header>
+
+    <main>
+        <section id="container" class="section section-container">
+            <div class="progress-bar">
+                <div class="step active"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+            <div class="title">
+                <h4>TUTORIAL</h4>
+            </div> 
+            
+            <!-- até aqui tudo ficara aparecendo na tela a todo instante -->
+
+            <div class="tutorial-step" id="step1">
+                <div class="balloon-coelho" id="balloonCoelho">
+                    <img src="duracell/assets/coelho1.png" alt="Coelho" class="coelho">
+                    <h1>Antes de começarmos, que tal aprender as dinâmicas que serão usadas nesta fase da Duracell?</h1>
+                </div>
+                <div class="buttons">
+                    <button id="pularBtn">Pular</button>
+                    <button id="vamosBtn">Vamos!</button>
+                </div>
+            </div>
+            <!-- id step1, essa é a primeira tela que vai aparecer desde o inicio para o usuario, ao clicar em pularBtn ele vai para a página "duracell1.html" e ao clicar em vamosBtn essa div some a próxima de id setp2 aparece -->
+
+            <div class="tutorial-step" id="step2">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial2.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                    <button id="circle2" onclick=""> </button>
+                </div>
+
+                <button id="btnPronto" onclick="">Pronto</button>
+            </div>
+            <!-- ao clicar em btnPronto essa div de id step2 some e a div de id step3 aparece e o botão circle2 tem que ter essa mesma funcionalidade de ir para a próxima div -->
+
+            <div class="tutorial-step" id="step3">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                    <button id="circle3" onclick=""> </button>
+                </div>
+
+                <button id="btnPronto" onclick="">Pronto</button>
+            </div>
+            <!-- ao clicar em btnPronto essa div de id step3 some e a div de id step4 aparece e o botão circle3 tem que ter essa mesma funcionalidade  de ir para a próxima div -->
+
+            <div class="tutorial-step" id="step4">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial4.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                </div>
+
+                <button id="btnPronto" onclick="">Pronto</button>
+            </div>
+            <!-- ao clicar em btnPronto essa div de id step4 some e a div de id step5 aparece -->
+
+            <div class="tutorial-step" id="step5">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial5.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                    <button id="circle5" onclick=""> </button>
+                </div>
+
+                <button id="btnPronto" onclick="">Pronto</button>
+            </div>
+             <!-- ao clicar em btnPronto essa div de id step5 some e a div de id step6 aparece e o botão circle5 tem que ter essa mesma funcionalidade de ir para a próxima div-->
+
+            <div class="tutorial-step" id="step6">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial6.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                    <button id="circle6" onclick=""> </button>
+                </div>
+
+                <button id="btnPronto" onclick="">Pronto</button>
+            </div>
+            <!-- ao clicar em btnPronto essa div de id step6 some e a div de id step7 aparece e o botão circle6 tem que ter essa mesma funcionalidade de ir para a próxima div-->
+
+
+            <div class="tutorial-step" id="step7">
+                <div class="tutorial-area" id="tutorialArea">
+                    <img src="duracell/assets/tutorial7.png" alt="tutorial" class="tutorial" id="mobile">
+                    <img src="duracell/assets/tutorial3.png" alt="tutorial" class="tutorial" id="desktop">
+                    <button id="circle7" onclick=""> </button>
+                </div>
+            </div>
+            <!-- ao clicar no botão botão circle7 essa div de id step7 some e a div de id step8 aparece -->
+
+
+            <div class="tutorial-step" id="step8">
+                <div class="balloon-coelho" id="balloonCoelho">
+                    <img src="duracell/assets/coelho8.png" alt="Coelho" class="coelho">
+                    <h2>Agora que você já sabe como funcionam as dinâmicas, podemos começar o treinamento de fato!</h2>
+                    <p>Caso você esqueça como funciona alguma dinâmica, você pode pressionar o botão com uma exclamação no canto superior direito da tela para acessar a ajuda.</p>
+                </div>
+                <button id="btnPronto" onclick="">Vamos!</button>
+            </div>
+            <!-- ao clicar em btnPronto leva o usuário para a página "duracell1.html"-->
+
+        </section>
+
+        <div id="exitModal" class="modal">
+            <div class="modal-content">
+                <h2>Deseja realmente sair do jogo?</h2>
+                <p>Atenção: todo o seu progresso será perdido se você sair agora.</p>
+                <button id="continueBtn">Continuar jogando</button>
+                <button id="exitBtn">Sair</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

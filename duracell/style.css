@@ -130,6 +130,15 @@ nav {
     padding: 0px 12px;
 }
 
+.title h4{
+    font-family: 'Dela Gothic One', serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    padding: 0px 12px;
+}
+
 .display-area {
     width: 100%;
     height: 250px;
@@ -142,7 +151,7 @@ nav {
     justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .display-area img{
@@ -158,7 +167,7 @@ nav {
     justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .image-area img{
@@ -191,6 +200,7 @@ nav {
 }
 
 .product-list {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -216,7 +226,7 @@ nav {
 
 #btnPronto {
     font-size: 20px;
-    margin-top: 40px;
+    margin: 0;
     padding: 10px 60px;
     background-color: #96D700;
     color: #000;
@@ -226,6 +236,12 @@ nav {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+
+    /* Fixar no canto inferior */
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    left: 50%; /* Alinha o centro do botão com o meio da tela */
+    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
 }
 
 #btnPronto:hover {
@@ -234,7 +250,7 @@ nav {
 
 #btnProx {
     font-size: 20px;
-    margin-top: 20px;
+    margin: 0;
     padding: 10px 60px;
     background-color: #96D700;
     color: #000;
@@ -244,6 +260,12 @@ nav {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+
+    /* Fixar no canto inferior */
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    left: 50%; /* Alinha o centro do botão com o meio da tela */
+    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
 }
 
 #btnProx:hover {
@@ -492,4 +514,159 @@ nav {
 .erro5 {
     top: 163px;
     left: 175px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px 35px;
+
+    /* Fixar no canto inferior */
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    left: 50%; /* Alinha o centro do botão com o meio da tela */
+    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */ 
+}
+
+#pularBtn {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px 10px;
+    width: 150px;
+    background-color: #D9D9D9;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;  
+}
+
+#pularBtn:hover{
+    background-color: #BFBFBF;
+}
+
+#vamosBtn {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px 10px;
+    width: 150px;
+    background-color: #96D700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;  
+}
+
+#vamosBtn:hover {
+    background-color: #ADF30C;
+}
+
+.balloon-coelho {
+    width: 100%;
+    height: 300px;
+    position: relative; /* Necessário para posicionar os slots */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.balloon-coelho img{
+    width: auto;
+    height: 325px;
+}
+
+.balloon-coelho h1 {
+    position: absolute;
+    font-size: 17px;
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #BC835E;
+    padding: 0px 30px; 
+    top: 200px;
+}
+
+.balloon-coelho h2 {
+    position: absolute;
+    font-size: 17px;
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #BC835E;
+    padding: 0px 8px; 
+    top: 10px;
+}
+
+.balloon-coelho p{
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    color: #714123;
+    padding: 0px 0px; 
+    top: 350px;
+}
+
+.tutorial-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tutorial-area button{
+    border: 4px solid #96D700;
+    background-color: transparent;
+    border-radius: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.tutorial-area button:hover{
+    background-color: #aef30c25;
+}
+
+#circle2 {
+    top: 330px;
+    left: 130px;
+    width: 80px;
+    height: 80px;
+}
+
+#circle3 {
+    top: 150px;
+    left: 230px;
+    width: 80px;
+    height: 80px;
+}
+
+#circle5 {
+    top: 385px;
+    left: 240px;
+    width: 110px;
+    height: 40px;
+}
+
+#circle6 {
+    top: 277px;
+    left: 252px;
+    width: 150px;
+    height: 150px;
+}
+
+#circle7 {
+    top: 345px;
+    left: 235px;
+    width: 65px;
+    height: 65px;
+}
+
+#desktop {
+    display: none;
 }

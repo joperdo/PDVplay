@@ -645,3 +645,47 @@ document.addEventListener("DOMContentLoaded", () => {
 function proxPage() {
     window.location.href = "index.html";
 }
+
+//Interações tela de Tutorial
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.body.id !== "tutorial") return;
+
+    let currentStep = 1;
+    const totalSteps = 8;
+
+    function showStep(step) {
+        document.querySelectorAll(".tutorial-step").forEach(div => {
+            div.style.display = "none";
+        });
+        
+        const currentDiv = document.getElementById(`step${step}`);
+        if (currentDiv) {
+            currentDiv.style.display = "block";
+        }
+    }
+
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            currentStep++;
+            showStep(currentStep);
+        } else {
+            window.location.href = "duracell1.html";
+        }
+    }
+
+    document.getElementById("pularBtn").addEventListener("click", function () {
+        window.location.href = "duracell1.html";
+    });
+
+    document.getElementById("vamosBtn").addEventListener("click", function () {
+        nextStep();
+    });
+
+    document.querySelectorAll("#btnPronto, [id^='circle']").forEach(button => {
+        button.addEventListener("click", function () {
+            nextStep();
+        });
+    });
+
+    showStep(currentStep);
+});
