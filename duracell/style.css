@@ -578,7 +578,7 @@ nav {
 
 .balloon-coelho img{
     width: auto;
-    height: 325px;
+    height: 310px;
 }
 
 .balloon-coelho h1 {
@@ -589,12 +589,12 @@ nav {
     font-style: normal;
     color: #BC835E;
     padding: 0px 30px; 
-    top: 200px;
+    top: 185px;
 }
 
 .balloon-coelho h2 {
     position: absolute;
-    font-size: 17px;
+    font-size: 16px;
     font-family: 'Dela Gothic One', serif;
     font-weight: 400;
     font-style: normal;
@@ -609,8 +609,7 @@ nav {
     font-weight: bold;
     font-style: normal;
     color: #714123;
-    padding: 0px 0px; 
-    top: 350px;
+    top: 345px;
 }
 
 .tutorial-area{
@@ -618,6 +617,76 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+.tutorial-area h1{
+    position: absolute;
+    font-size: 15px;
+    font-family: 'Dela Gothic One', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #714123;
+    padding: 0px 10px; 
+}
+
+#h12 {
+    top: 10px;
+}
+
+#h15{
+    padding: 0px 5px;
+    top: -3px;
+}
+
+#h16{
+    top: -3px;
+    padding: 0px 20px; 
+}
+
+#h17{
+    top: -3px;
+    padding: 0px 20px; 
+}
+
+.tutorial-area h2{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #BC835E;
+    background-color: transparent;
+    padding: 5px 10px; 
+    border-radius: 7px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 90%;
+}
+
+#h22 {
+    width: 80%;
+    top: 250px;
+}
+
+#h23 {
+    top: 5px;
+}
+
+#h24 {
+    width: 70%;
+    top: 380px;
+    left: 40px;
+}
+
+#h25 {
+    top: 260px;
+}
+
+#h26 {
+    top: 360px;
+}
+
+#h27 {
+    top: 420px;
+    padding: 5px 0px; 
 }
 
 .tutorial-area button{
@@ -633,28 +702,28 @@ nav {
 }
 
 #circle2 {
-    top: 330px;
-    left: 130px;
+    top: 337px;
+    left: 127px;
     width: 80px;
     height: 80px;
 }
 
 #circle3 {
-    top: 150px;
+    top: 145px;
     left: 230px;
     width: 80px;
     height: 80px;
 }
 
 #circle5 {
-    top: 385px;
+    top: 382px;
     left: 240px;
     width: 110px;
     height: 40px;
 }
 
 #circle6 {
-    top: 277px;
+    top: 275px;
     left: 252px;
     width: 150px;
     height: 150px;
