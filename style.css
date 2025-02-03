@@ -19,11 +19,10 @@ body {
 header {
     margin-top: 2%;
     width: 100%;
-    max-width: 400px;
     text-align: center;
 }
 
-header nav img {
+.logo img {
     width: 150px;
 }
 
@@ -70,6 +69,10 @@ h2 {
     width: 100%;
 }
 
+#search-pc{
+    display: none;
+}
+
 /* Seção de indústrias */
 main {
     padding: 20px;
@@ -80,7 +83,6 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    max-width: 400px;
 }
 
 .card {
@@ -122,46 +124,171 @@ main {
     background-color: #ADF30C;
 }
 
-.btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.cardd {
+#card-disabled {
     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 2px;
     border: 1px solid #D9D9D9;
     box-shadow: 0px 2px 0px #D9D9D9;
-    text-align: center;
-    transition: transform 0.2s;
 }
 
-.cardd:hover {
+#card-disabled:hover {
     transform: translateY(-5px);
     box-shadow: 0px 4px 0px #D9D9D9;
 }
 
-.cardd img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-.bttn {
+#btn-disabled {
     background-color: #D9D9D9;
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    border: none;
-    padding: 8px 32px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
 }
 
 
+@media screen and (min-width: 1024px) {
+
+    body {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Header */
+    header {
+        margin-top: 2%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    .logo img{
+        width: 37%;
+    }
+    
+    .teto img {
+        width: 100%;
+        margin-top: 1%;
+        margin-bottom: 10px;
+    }
+    
+    h2 {
+        font-family: 'Dela Gothic One', serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 45px;
+        color: #0068C6;
+        margin-bottom: 15px;
+        margin-top: 5px;
+    }
+    
+    /* Barra de pesquisa */
+    
+    .search {
+        padding: 0px;
+    }
+    
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #F1FBFF;
+        padding: 5px 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    
+    .search-bar .lupa span{
+        color: #727272;
+        margin-right: 8px;
+        font-size: 40px;
+    }
+    
+    .search-bar .pesquisar input {
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+    }
+
+    #search-pc{
+        display: block;
+    }
+
+    #search-mobile{
+        display: none;
+    }
+    
+    /* Seção de indústrias */
+    main {
+        padding: 20px;
+    }
+    
+    .section-industrias {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5%;
+        width: 95%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    
+    .card {
+        background-color: #fff;
+        border-radius: 25px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px 10px;
+        border: 1px solid #0068C6;
+        box-shadow: 0px 2px 0px #0068C6;
+        text-align: center;
+        transition: transform 0.2s;
+
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 0px #0068C6;
+    }
+    
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    
+    .btn {
+        background-color: #96D700;
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        padding:20px 25%;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 10px;
+    }
+    
+    .btn:hover {
+        background-color: #ADF30C;
+    }
+
+    #card-disabled {
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        box-shadow: 0px 2px 0px #D9D9D9;
+    }
+    
+    #card-disabled:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 0px #D9D9D9;
+    }
+    
+    #btn-disabled {
+        background-color: #D9D9D9;
+    }
+
+}
 
 

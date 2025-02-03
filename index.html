@@ -13,7 +13,19 @@
     
     <header>
         <nav>
-            <img src="assets/logo.png" alt="PDVplay Logo">
+            <div class="logo">
+                <img src="duracell/assets/logo.png" alt="PDVplay Logo">
+            </div>
+
+            <div class="search" id="search-pc">
+                <div class="search-bar">
+                    <div class="lupa">
+                        <span class="material-icons lupa">search</span>
+                    </div>
+                    <div class="pesquisar">
+                        <input type="text" placeholder="Pesquisar por indústria">
+                </div>
+            </div>
         </nav>
 
         <div class="teto">
@@ -22,7 +34,7 @@
 
         <h2>Escolha a indústria para iniciar</h2>
 
-        <div class="search">
+        <div class="search" id="search-mobile">
             <div class="search-bar">
                 <div class="lupa">
                     <span class="material-icons lupa">search</span>
@@ -36,20 +48,20 @@
     <main>
         <section id="industrias" class="section section-industrias">
             <div class="card">
-                <img src="assets/duracellcapa.png" alt="Duracell">
+                <img src="assets/duracellcapa.png" id="Duracell" alt="Duracell">
                 <button class="btn" id="duracellBtn">Começar</button>
             </div>
-            <div class="cardd">
-                <img src="assets/ypecapa.png" alt="Ypê">
-                <button class="bttn">Em breve</button>
+            <div id="card-disabled" class="card">
+                <img src="assets/ypecapa.png" id="Ypê" alt="Ypê">
+                <button id="btn-disabled" class="btn">Em breve</button>
             </div>
-            <div class="cardd">
-                <img src="assets/bettanincapa.png" alt="Bettanin">
-                <button class="bttn">Em breve</button>
+            <div id="card-disabled" class="card">
+                <img src="assets/bettanincapa.png" id="Bettanin" alt="Bettanin">
+                <button id="btn-disabled" class="btn">Em breve</button>
             </div>
-            <div class="cardd">
-                <img src="assets/zaelicapa.png" alt="Zaeli">
-                <button class="bttn">Em breve</button>
+            <div id="card-disabled" class="card">
+                <img src="assets/zaelicapa.png" id="Zaeli" alt="Zaeli">
+                <button id="btn-disabled" class="btn">Em breve</button>
             </div>
         </section>
     </main>
