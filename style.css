@@ -8,6 +8,17 @@
     font-family: 'Roboto', serif;
 }
 
+.marca-dagua {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg); /* Ajuste o ângulo da rotação */
+    width: 100vw; /* Tamanho grande para cobrir a tela */
+    opacity: 0.3; /* Define a opacidade */
+    pointer-events: none; /* Para não interferir nos cliques */
+    z-index: -1; /* Mantém atrás dos elementos */
+}
+
 body {
     background-color: #FFFFFF;
     display: flex;
