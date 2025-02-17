@@ -74,59 +74,99 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//Interações tela 1
+// Interações tela 1
 document.addEventListener("DOMContentLoaded", function () {
     const bodyElement = document.querySelector('body');
     
-    // Verifica se o id do body é 'tela1' antes de executar as interações
     if (bodyElement && bodyElement.id === 'tela1') {
         let usedProducts = {};
 
-        // Adiciona o produto ao display
-        window.addToDisplay = function (productImg) {
-            const slots = document.querySelectorAll('.product-slot');
-            let added = false;
+        // Adiciona funcionalidade de clique e arrastar para os produtos na seleção
+        const productItems = document.querySelectorAll('.product-list img');
+        productItems.forEach(item => {
+            item.setAttribute('draggable', true);
+            
+            item.addEventListener('click', function () {
+                addToDisplay(this.getAttribute('src').split('/').pop());
+            });
 
+            item.addEventListener('dragstart', function (event) {
+                event.dataTransfer.setData('text/plain', this.getAttribute('src').split('/').pop());
+            });
+        });
+
+        // Adiciona funcionalidade de drop para os slots
+        const slots = document.querySelectorAll('.product-slot');
+        slots.forEach(slot => {
+            slot.addEventListener('dragover', function (event) {
+                event.preventDefault(); // Permite o drop
+            });
+
+            slot.addEventListener('drop', function (event) {
+                event.preventDefault();
+                const productImg = event.dataTransfer.getData('text/plain');
+                addToSlot(this, productImg);
+            });
+        });
+
+        // Adiciona o produto ao primeiro slot disponível
+        function addToDisplay(productImg) {
+            const slots = document.querySelectorAll('.product-slot');
             for (let slot of slots) {
                 if (!slot.hasChildNodes()) {
-                    const img = document.createElement('img');
-                    img.src = `duracell/assets/${productImg}`;
-                    img.alt = 'Produto Duracell';
-                    img.onclick = function (event) {
-                        event.stopPropagation();
-                        removeFromDisplay(this);
-                    };
-                    slot.appendChild(img);
-
-                    usedProducts[productImg] = (usedProducts[productImg] || 0) + 1;
-                    added = true;
-                    break;
+                    addToSlot(slot, productImg);
+                    return;
                 }
             }
-
-            // Só mostra o modal se todos os slots estiverem ocupados
-            if (!added && checkAllSlotsFilled()) {
-                showFullSlotsModal();
-            }
-        };
-
-        // Verifica se todos os slots estão preenchidos
-        function checkAllSlotsFilled() {
-            const slots = document.querySelectorAll('.product-slot');
-            return Array.from(slots).every(slot => slot.children.length > 0);
+            showFullSlotsModal();
         }
 
-        // Mostra o modal de slots cheios
+        // Adiciona o produto ao slot especificado
+        function addToSlot(slot, productImg) {
+            if (slot.hasChildNodes()) return;
+
+            const img = document.createElement('img');
+            img.src = `duracell/assets/${productImg}`;
+            img.alt = productImg;
+            img.draggable = true;
+
+            img.addEventListener('dragstart', function (event) {
+                event.dataTransfer.setData('text/plain', productImg);
+            });
+
+            img.addEventListener('click', function (event) {
+                event.stopPropagation();
+                removeFromDisplay(this);
+            });
+
+            slot.appendChild(img);
+            usedProducts[productImg] = (usedProducts[productImg] || 0) + 1;
+        }
+
+        // Remove o produto ao clicar nele
+        function removeFromDisplay(imgElement) {
+            const productImg = imgElement.src.split('/').pop();
+            usedProducts[productImg]--;
+            if (usedProducts[productImg] === 0) delete usedProducts[productImg];
+            imgElement.parentElement.removeChild(imgElement);
+        }
+
+        // Exibir modais de erro e sucesso
         function showFullSlotsModal() {
             const modal = document.getElementById('fullSlotsModal');
             modal.style.display = 'block';
             modal.style.opacity = '1';
 
-            setTimeout(() => {
-                fadeOut(modal);
-            }, 5000);
-
+            setTimeout(() => fadeOut(modal), 5000);
             document.addEventListener('click', () => fadeOut(modal), { once: true });
+        }
+
+        function showSuccessModal() {
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+        function showErrorModal() {
+            document.getElementById('errorModal').style.display = 'flex';
         }
 
         // Função para fade-out (esmaecimento)
@@ -143,60 +183,48 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 70);
         }
 
-        // Remove o produto ao clicar nele
-        window.removeFromDisplay = function (imgElement) {
-            const productImg = imgElement.src.split('/').pop();
-            usedProducts[productImg]--;
-            if (usedProducts[productImg] === 0) delete usedProducts[productImg];
-            imgElement.parentElement.removeChild(imgElement);
-        };
-
-        // Exibir o modal de sucesso
-        window.showSuccessModal = function () {
-            document.getElementById('successModal').style.display = 'flex';
-        };
-
-        // Fechar o modal de sucesso
-        window.closeModal = function () {
-            document.getElementById('successModal').style.display = 'none';
-        };
-
-        // Próxima página
-        window.nextPage = function () {
-            window.location.href = "duracell2.html";
-        };
-
-        // Exibir o modal de erro
-        window.showErrorModal = function () {
-            document.getElementById('errorModal').style.display = 'flex';
-        };
-
-        // Função para limpar o display
-        window.restartDisplay = function () {
-            const slots = document.querySelectorAll('.product-slot img');
-            slots.forEach(img => img.parentElement.removeChild(img));
-
+        // Função para reiniciar a montagem
+        function restartDisplay() {
+            document.querySelectorAll('.product-slot img').forEach(img => img.remove());
             usedProducts = {};
-
             document.getElementById('errorModal').style.display = 'none';
-        };
+        }
 
-        // Valida a montagem
-        window.finalizarMontagem = function () {
-            const displayArea = document.getElementById('displayArea');
-            const repetidos = Object.values(usedProducts).filter(qtd => qtd > 1).length;
-            const totalProdutos = Object.keys(usedProducts).length;
+        // Validação da montagem
+        function finalizarMontagem() {
+            const slots = document.querySelectorAll('.product-slot');
+            const selectedProducts = Array.from(slots).map(slot => slot.firstChild ? slot.firstChild.src.split('/').pop() : null);
 
-            if (totalProdutos === 5 && repetidos === 1) {
-                displayArea.classList.remove('error');
+            // Produtos esperados nos primeiros 3 slots
+            const firstThree = selectedProducts.slice(0, 3);
+            const hasAA4 = firstThree.filter(item => item === "aa4.png").length > 0;
+            const hasAAA4 = firstThree.filter(item => item === "aaa4.png").length > 0;
+            const repeated = firstThree.filter(item => item === "aa4.png" || item === "aaa4.png").length === 3;
+
+            // Produtos esperados nos últimos 3 slots
+            const lastThree = selectedProducts.slice(3, 6);
+            const remainingProducts = ["aa2.png", "aaa2.png", "2032.png"];
+            const hasRemaining = remainingProducts.every(p => lastThree.includes(p));
+
+            if (hasAA4 && hasAAA4 && repeated && hasRemaining) {
                 showSuccessModal();
             } else {
-                displayArea.classList.add('error');
                 showErrorModal();
             }
-        };
+        }
+
+        // Função para redirecionar para a próxima página
+        function nextPage() {
+            window.location.href = "duracell2.html";
+        }
+
+        // Expondo funções globais
+        window.finalizarMontagem = finalizarMontagem;
+        window.restartDisplay = restartDisplay;
+        window.nextPage = nextPage;
     }
 });
+
 
 
 //Interações da tela 2
