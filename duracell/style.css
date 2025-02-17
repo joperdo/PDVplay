@@ -610,7 +610,7 @@ nav {
     font-weight: 400;
     font-style: normal;
     color: #BC835E;
-    padding: 0px 30px; 
+    padding: 0px 5%; 
     top: 15px;
 }
 
@@ -619,7 +619,7 @@ nav {
     font-size: 12px;
     font-weight: bold;
     font-style: normal;
-    color: #714123;
+    color: #714123; 
     top: 345px;
 }
 
@@ -741,7 +741,7 @@ nav {
 }
 
 #circle7 {
-    top: 345px;
+    top: 297px;
     left: 235px;
     width: 65px;
     height: 65px;
@@ -1504,8 +1504,8 @@ nav {
 }
 
 #circle7 {
-    top: 285px;
-    left: 1050px;
+    top: 185px;
+    left: 1040px;
     width: 135px;
     height: 135px;
 }
