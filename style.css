@@ -26,6 +26,11 @@ body {
     align-items: center;
 }
 
+#login {
+    background-color: #00A2E0;
+    justify-content: center;
+}
+
 /* Header */
 header {
     margin-top: 2%;
@@ -35,6 +40,15 @@ header {
 
 .logo img {
     width: 150px;
+}
+
+.logo-branca {
+    margin-top: 40%;
+    margin-bottom: 40%;
+}
+
+.logo-branca img{
+    width: 190px;
 }
 
 .teto img {
@@ -87,6 +101,15 @@ h2 {
 /* Seção de indústrias */
 main {
     padding: 20px;
+}
+
+.section-login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
 .section-industrias {
@@ -150,6 +173,49 @@ main {
     background-color: #D9D9D9;
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 256px;
+}
+
+.input-group span {
+    color: #0068C6;
+    font-size: 25px;
+    margin-right: 10px;
+    fill: 1;
+    font-variation-settings: 'FILL' 1;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    background: none;
+}
+
+#entrar {
+    margin-top: 25%;
+    font-size: 18px;
+    padding: 10px 10px;
+    width: 150px;
+    background-color: #96D700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;  
+}
+
+#entrar:hover {
+    background-color: #ADF30C;
+}
+
 footer {
     color: #222; 
     text-align: center; 
@@ -176,6 +242,7 @@ footer {
 .footer-bottom a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+
 
 
 @media screen and (min-width: 1024px) {
@@ -353,6 +420,66 @@ footer {
         text-decoration: underline; 
     }
 
+    .logo-branca {
+        margin-top: 30%;
+        margin-bottom: 30%;
+    }
+    
+    .logo-branca img{
+        width: 370px;
+    }
+    
+    .section-login {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 500px;
+    }
+    
+    .input-group span {
+        color: #0068C6;
+        font-size: 40px;
+        margin-right: 10px;
+        fill: 1;
+        font-variation-settings: 'FILL' 1;
+    }
+    
+    .input-group input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 20px;
+        color: #333;
+        background: none;
+    }
+    
+    #entrar {
+        margin-top: 25%;
+        font-size: 25px;
+        padding: 10px 80px;
+        width: 270px;
+        background-color: #96D700;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;  
+    }
+    
+    #entrar:hover {
+        background-color: #ADF30C;
+    }
 }
 
 
